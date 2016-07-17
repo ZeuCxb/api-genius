@@ -1,0 +1,1 @@
+sudo screen -d -m npm run production &
