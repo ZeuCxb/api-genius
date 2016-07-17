@@ -9,7 +9,6 @@ require('strict-mode')(function () {
     .then('helpers')
     .then('drivers')
     .then('adapters')
-    .then('models')
     .then('routes')
     .into(app);
 });
