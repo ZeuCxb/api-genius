@@ -1,13 +1,13 @@
-const redis = require('redis');
+// const redis = require('redis');
 
-module.exports = () => {
-	const redisClient = redis.createClient();
+// module.exports = () => {
+// 	const redisClient = redis.createClient();
 
-	redisClient.on('connect', () => {
-		console.log('Redis conectado');
-	});
+// 	redisClient.on('connect', () => {
+// 		console.log('Redis conectado');
+// 	});
 
-	let redisDB = {};
+// 	let redisDB = {};
 
-	return redisDB;
-};
+// 	return redisDB;
+// };
