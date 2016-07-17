@@ -15,12 +15,17 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "dev": "PORT=3000 nodemon server.js",
+    "production": "PORT=80 npm run apidoc && forever server.js",
+    "apidoc": "apidoc -i routes/ -o public/apidoc",
     "test": "mocha tests/**.*js"
   },
   "dependencies": {
+    "apidoc": "^0.16.1",
     "body-parser": "^1.15.2",
     "consign": "^0.1.2",
     "express": "^4.14.0",
+    "forever": "^0.15.2",
     "pg": "^6.0.2",
     "redis": "^2.6.2",
     "strict-mode": "^0.7.0"
@@ -28,7 +33,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "nodemon": "^1.9.2"
   },
   "engine": {
     "node": ">=5.0.0"
