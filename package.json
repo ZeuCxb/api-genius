@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "PORT=3000 nodemon server.js",
-    "production": "PORT=80 npm run apidoc && forever server.js",
+    "production": "npm run apidoc && PORT=80 forever server.js",
     "apidoc": "apidoc -i routes/ -o public/apidoc",
     "test": "mocha tests/**.*js"
   },
