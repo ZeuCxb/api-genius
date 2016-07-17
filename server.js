@@ -8,7 +8,7 @@ require('strict-mode')(function () {
     .include('configs')
     .then('helpers')
     .then('drivers')
-    .then('interpreters')
+    .then('adapters')
     .then('models')
     .then('routes')
     .into(app);

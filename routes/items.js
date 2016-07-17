@@ -1,11 +1,11 @@
 module.exports = app => {
-    app.route('/users')
+    app.route('/items')
         .get((req, res) => {
-            app.interpreters.db.getAll('user', (err, users) => {
-                if(users) {
-                    app.helpers.request(res, true, users);
+            app.adapters.db.getAll('items', (err, items) => {
+                if(items) {
+                    app.helpers.request(res, true, items);
                 } else {
-                    app.helpers.request(res, true, 'No users yet.');
+                    app.helpers.request(res, true, 'No items yet.');
                 }
             });
         })
@@ -15,7 +15,7 @@ module.exports = app => {
             const lastname = req.body.lastname;
 
             if(firstname && lastname) {
-                app.interpreters.db.save('user', {firstname, lastname}, (err, user) => {
+                app.adapters.db.save('user', {firstname, lastname}, (err, user) => {
                     app.helpers.request(res, true, user);
                 });
             } else {
@@ -27,7 +27,7 @@ module.exports = app => {
         .get((req, res) => {
             const _id = req.params._id;
 
-            app.interpreters.db.getById('user', _id, (err, user) => {
+            app.adapters.db.getById('user', _id, (err, user) => {
                 if(user) {
                     app.helpers.request(res, true, user);
                 } else {
